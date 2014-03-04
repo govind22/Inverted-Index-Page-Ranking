@@ -1,0 +1,41 @@
+THis project is implemented for inverted index which will rank document as per given algorithm amd query provided by user. By doing this most relevent document will be returned to user based on his/her input query.
+
+To Run
+----------------------------------------------------------------------------------------
+1. javac InvertedIndex.java
+2. java InvertedIndex docfile.txt SearchString Algorithm
+  
+Where,  Search String: String to be searched in double quotes.
+	Algorithm: In case of Cosine Algorithm, it is cosine
+		   In case of Boolean Algorithm, it is boolean 
+
+It expects docfile and java file in the same folder. No need to enter absolute
+path.	 
+
+Sample Output ran on cosDocfile.txt
+--------------------------------------------------------------------------------------
+
+Following is the sample O/P when we run our cosine and Boolean algorithm.
+
+1. Ran cosine algorithm for query sting "quarrel sir" .
+  
+   prasad@ubuntu:~/workspace/HW2$ javac InvertedIndex.java 
+   prasad@ubuntu:~/workspace/HW2$ java InvertedIndex cosDocfile.txt "quarrel sir" cosine
+
+   docid : 1 score : 0.7266313138400092
+   docid : 0 score : 0.5884361159227691
+   docid : 4 score : 0.03249494064585214
+   docid : 2 score : 0.007840021916717826
+
+2. Ran Boolean algorithm for query "+ * quarrel sir - you"
+ 
+   prasad@ubuntu:~/workspace/HW2$ java InvertedIndex cosDocfile.txt "+ * quarrel sir - you" boolean	
+
+   docid : 0 score : 1.0
+   docid : 1 score : 0.5
+   docid : 3 score : 0.25 
+   docid : 4 score : 0.2
+ 
+   cosDocfile.txt is attached in for reference. 	
+
+   Boolean ranking algorithm supports prefix expressions
